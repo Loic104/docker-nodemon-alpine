@@ -17,4 +17,4 @@ RUN mkdir /app
 WORKDIR /app
 
 # Default command
-CMD ["forever", "start", "-c", "nodemon"]
+CMD ["forever", "start", "-c", "nodemon", "server.js"]
