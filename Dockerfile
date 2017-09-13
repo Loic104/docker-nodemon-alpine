@@ -13,7 +13,7 @@ RUN mkdir -p /usr/lib/node_modules \
     && rm -rf ~/.node-gyp /tmp/*
 
 # Prepare workdir
-RUN mkdir /app \
+RUN mkdir /app
 WORKDIR /app
 
 # Default command
