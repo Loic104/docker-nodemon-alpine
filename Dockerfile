@@ -10,12 +10,10 @@ RUN mkdir -p /usr/lib/node_modules \
         --no-progress \
         --global-folder /usr/lib \
     && yarn cache clean \
-    && chown -R node:node /usr/lib/node_modules \
     && rm -rf ~/.node-gyp /tmp/*
 
 # Prepare workdir
 RUN mkdir /app \
-    && chown node:node /app
 WORKDIR /app
 
 # Default command
