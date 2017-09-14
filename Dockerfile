@@ -5,11 +5,12 @@ RUN apk add --no-cache \
     su-exec
 
 # Install libraries
-RUN npm install -g forever evernote express express-jwt jwks-rsa body-parser
+RUN npm install -g forever
 
-# Prepare workdir
-RUN mkdir /app
+
+VOLUME ["/app"]
 WORKDIR /app
 
-# Default command
-CMD ["forever", "-wv", "server.js"]
+EXPOSE 3001
+
+ENTRYPOINT npm install; forever -w server.js
