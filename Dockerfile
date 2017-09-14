@@ -17,4 +17,4 @@ RUN mkdir /app
 WORKDIR /app
 
 # Default command
-CMD ["forever", "start", "-wv", "server.js"]
+CMD ["forever", "-wv", "server.js"]
