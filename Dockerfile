@@ -4,13 +4,8 @@ FROM node:8-alpine
 RUN apk add --no-cache \
     su-exec
 
-# Install nodemon
-RUN mkdir -p /usr/lib/node_modules \
-    && yarn global add forever evernote express express-jwt jwks-rsa body-parser  \
-        --no-progress \
-        --global-folder /usr/lib \
-    && yarn cache clean \
-    && rm -rf ~/.node-gyp /tmp/*
+# Install libraries
+RUN npm install -g forever evernote express express-jwt jwks-rsa body-parser
 
 # Prepare workdir
 RUN mkdir /app
