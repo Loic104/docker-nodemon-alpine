@@ -6,7 +6,7 @@ RUN apk add --no-cache \
 
 # Install nodemon
 RUN mkdir -p /usr/lib/node_modules \
-    && yarn global add nodemon forever evernote express express-jwt jwks-rsa body-parser  \
+    && yarn global add forever evernote express express-jwt jwks-rsa body-parser  \
         --no-progress \
         --global-folder /usr/lib \
     && yarn cache clean \
@@ -17,4 +17,4 @@ RUN mkdir /app
 WORKDIR /app
 
 # Default command
-CMD ["forever", "start", "-c", "nodemon", "server.js"]
+CMD ["forever", "start", "-wv", "server.js"]
