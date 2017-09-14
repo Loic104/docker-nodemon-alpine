@@ -1,5 +1,7 @@
 FROM node:8-alpine
 
+ENV NODE_ENV production
+
 # Install common libraries
 RUN apk add --no-cache \
     su-exec
@@ -7,7 +9,8 @@ RUN apk add --no-cache \
 # Install libraries
 RUN npm install -g forever
 
-
+# prepare directory
+RUN mkdir /app
 VOLUME ["/app"]
 WORKDIR /app
 
