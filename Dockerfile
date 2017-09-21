@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:6-alpine
 
 ENV NODE_ENV production
 
